@@ -2549,7 +2549,7 @@ RSpec.describe Hanami::Helpers::FormHelper do
           select :store, option_values, options: { prompt: 'Select a store' }
         end.to_s
 
-        expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option disabled="disabled">Select a store</option>\n<option value="it">Italy</option>\n<option value="us">United States</option>\n</select>))
+        expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option value="">Select a store</option>\n<option value="it">Italy</option>\n<option value="us">United States</option>\n</select>))
       end
 
       it 'allows blank string' do
@@ -2557,7 +2557,7 @@ RSpec.describe Hanami::Helpers::FormHelper do
           select :store, option_values, options: { prompt: '' }
         end.to_s
 
-        expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option disabled="disabled"></option>\n<option value="it">Italy</option>\n<option value="us">United States</option>\n</select>))
+        expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option value=""></option>\n<option value="it">Italy</option>\n<option value="us">United States</option>\n</select>))
       end
 
       describe 'with values' do
@@ -2569,7 +2569,7 @@ RSpec.describe Hanami::Helpers::FormHelper do
             select :store, option_values, options: { prompt: 'Select a store' }
           end.to_s
 
-          expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option disabled="disabled">Select a store</option>\n<option value="it" selected="selected">Italy</option>\n<option value="us">United States</option>\n</select>))
+          expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option value="">Select a store</option>\n<option value="it" selected="selected">Italy</option>\n<option value="us">United States</option>\n</select>))
         end
       end
 
@@ -2583,7 +2583,7 @@ RSpec.describe Hanami::Helpers::FormHelper do
               select :store, option_values, options: { prompt: 'Select a store' }
             end.to_s
 
-            expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option disabled="disabled">Select a store</option>\n<option value="it" selected="selected">Italy</option>\n<option value="us">United States</option>\n</select>))
+            expect(actual).to include(%(<select name="book[store]" id="book-store">\n<option value="">Select a store</option>\n<option value="it" selected="selected">Italy</option>\n<option value="us">United States</option>\n</select>))
           end
         end
 

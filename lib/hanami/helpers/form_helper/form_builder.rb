@@ -1303,7 +1303,7 @@ module Hanami
           input_value = _value(name)
 
           super(attributes) do
-            option(prompt, disabled: true) if prompt
+            option(prompt, value: '') if prompt
 
             already_selected = nil
             values.each do |content, value|
