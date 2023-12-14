@@ -3,7 +3,7 @@
 require "hanami/helpers/form_helper/html_node"
 require "hanami/helpers/form_helper/values"
 require "hanami/helpers/html_helper/html_builder"
-require "hanami/helpers/escape_helper"
+# require "hanami/helpers/escape_helper"
 require "hanami/utils/string"
 
 module Hanami

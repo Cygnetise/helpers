@@ -2,11 +2,11 @@
 
 require "hanami/helpers/version"
 require "hanami/helpers/html_helper"
-require "hanami/helpers/escape_helper"
+# require "hanami/helpers/escape_helper"
 require "hanami/helpers/routing_helper"
 require "hanami/helpers/link_to_helper"
 require "hanami/helpers/form_helper"
-require "hanami/helpers/number_formatting_helper"
+# require "hanami/helpers/number_formatting_helper"
 
 # @since 0.1.0
 module Hanami
@@ -25,11 +25,11 @@ module Hanami
     def self.included(base)
       base.class_eval do
         include Hanami::Helpers::HtmlHelper
-        include Hanami::Helpers::EscapeHelper
+        # include Hanami::Helpers::EscapeHelper
         include Hanami::Helpers::RoutingHelper
         include Hanami::Helpers::LinkToHelper
         include Hanami::Helpers::FormHelper
-        include Hanami::Helpers::NumberFormattingHelper
+        # include Hanami::Helpers::NumberFormattingHelper
       end
     end
   end

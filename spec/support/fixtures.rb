@@ -3,7 +3,7 @@
 require "hanami/view"
 require "hanami/controller"
 require "hanami/helpers/html_helper"
-require "hanami/helpers/escape_helper"
+# require "hanami/helpers/escape_helper"
 require "dry/struct"
 
 module Types
