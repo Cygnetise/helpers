@@ -1957,7 +1957,7 @@ RSpec.describe Hanami::Helpers::FormHelper do
     end
 
     it 'allows to omit content, by accepting Hash serializable options' do
-      options = Hanami::Utils::Hash.new(class: 'form-control', cols: 5)
+      options = Hanami::CygUtils::Hash.new(class: 'form-control', cols: 5)
 
       actual = view.form_for(:book, action) do
         text_area :description, options

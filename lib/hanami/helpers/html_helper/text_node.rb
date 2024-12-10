@@ -1,4 +1,4 @@
-require 'hanami/utils/escape'
+require 'hanami/cyg_utils/escape'
 
 module Hanami
   module Helpers
@@ -27,7 +27,7 @@ module Hanami
         # @since 0.2.5
         # @api private
         def to_s
-          Utils::Escape.html(@content)
+          CygUtils::Escape.html(@content)
         end
       end
     end

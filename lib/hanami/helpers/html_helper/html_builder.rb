@@ -1,6 +1,6 @@
 require 'hanami/utils'
-require 'hanami/utils/class_attribute'
-require 'hanami/utils/escape'
+require 'hanami/cyg_utils/class_attribute'
+require 'hanami/cyg_utils/escape'
 require 'hanami/helpers/html_helper/empty_html_node'
 require 'hanami/helpers/html_helper/html_node'
 require 'hanami/helpers/html_helper/html_fragment'
@@ -172,7 +172,7 @@ module Hanami
           }, __FILE__, __LINE__ - 5
         end
 
-        include Utils::ClassAttribute
+        include CygUtils::ClassAttribute
 
         class_attribute :html_node
         self.html_node = ::Hanami::Helpers::HtmlHelper::HtmlNode
@@ -322,14 +322,14 @@ module Hanami
 
         # Resolves all the nodes and generates the markup
         #
-        # @return [Hanami::Utils::Escape::SafeString] the output
+        # @return [Hanami::CygUtils::Escape::SafeString] the output
         #
         # @since 0.1.0
         # @api private
         #
         # @see http://www.rubydoc.info/gems/hanami-utils/Hanami/Utils/Escape/SafeString
         def to_s
-          Utils::Escape::SafeString.new(@nodes.map(&:to_s).join(NEWLINE))
+          CygUtils::Escape::SafeString.new(@nodes.map(&:to_s).join(NEWLINE))
         end
 
         # Encode the content with the given character encoding

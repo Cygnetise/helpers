@@ -1,4 +1,4 @@
-require 'hanami/utils/escape'
+require 'hanami/cyg_utils/escape'
 
 module Hanami
   module Helpers
@@ -72,7 +72,7 @@ module Hanami
       #   view.evil_content
       #     # => "<div>\n&lt;script&gt;alert(&apos;xss&apos;)&lt;&#x2F;script&gt;</div>"
       def escape_html(input)
-        Utils::Escape.html(input)
+        CygUtils::Escape.html(input)
       end
 
       # @since 0.1.0
@@ -144,7 +144,7 @@ module Hanami
       #   view.evil_attribute
       #     # => %(<span class="&quot;&#x20;onclick&#x3d;&quot;javascript&#x3a;alert&#x28;&#x27;xss&#x27;&#x29;&quot;&#x20;id&#x3d;&quot;">hello</span>
       def escape_html_attribute(input)
-        Utils::Escape.html_attribute(input)
+        CygUtils::Escape.html_attribute(input)
       end
 
       # @since 0.1.0
@@ -173,8 +173,8 @@ module Hanami
       #
       # @since 0.1.0
       #
-      # @see Hanami::Utils::Escape.url
-      # @see Hanami::Utils::Escape::DEFAULT_URL_SCHEMES
+      # @see Hanami::CygUtils::Escape.url
+      # @see Hanami::CygUtils::Escape::DEFAULT_URL_SCHEMES
       #
       # @example Basic usage
       #   require 'hanami/helpers/escape_helper'
@@ -221,8 +221,8 @@ module Hanami
       #
       #   view.ftp_link
       #     # => %(<a href="ftps://ftp.example.org">FTP</a>)
-      def escape_url(input, schemes = Utils::Escape::DEFAULT_URL_SCHEMES)
-        Utils::Escape.url(input, schemes)
+      def escape_url(input, schemes = CygUtils::Escape::DEFAULT_URL_SCHEMES)
+        CygUtils::Escape.url(input, schemes)
       end
 
       # @since 0.1.0
@@ -235,7 +235,7 @@ module Hanami
       #
       # @param input [String] the input
       #
-      # @return [Hanami::Utils::Escape::SafeString] the string marked as safe string
+      # @return [Hanami::CygUtils::Escape::SafeString] the string marked as safe string
       #
       # @since 0.1.0
       #
@@ -265,7 +265,7 @@ module Hanami
       #   view.evil_content
       #     # => "<script>alert('xss')</script>"
       def raw(input)
-        Utils::Escape::SafeString.new(input)
+        CygUtils::Escape::SafeString.new(input)
       end
     end
   end

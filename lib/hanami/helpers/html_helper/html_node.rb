@@ -1,5 +1,5 @@
 require 'hanami/helpers/html_helper/empty_html_node'
-require 'hanami/utils/escape'
+require 'hanami/cyg_utils/escape'
 
 module Hanami
   module Helpers
@@ -60,10 +60,10 @@ module Hanami
             if @builder.nested?
               "\n#{@builder}\n"
             else
-              "\n#{Utils::Escape.html(result)}\n"
+              "\n#{CygUtils::Escape.html(result)}\n"
             end
           else
-            Utils::Escape.html(@content)
+            CygUtils::Escape.html(@content)
           end
         end
       end
