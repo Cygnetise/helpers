@@ -1,4 +1,4 @@
-require 'hanami/utils/kernel'
+require 'hanami/cyg_utils/kernel'
 
 module Hanami
   module Helpers
@@ -202,9 +202,9 @@ module Hanami
           when NilClass
             raise TypeError
           when ->(n) { n.to_s.match(INTEGER_REGEXP) }
-            Utils::Kernel.Integer(@number)
+            CygUtils::Kernel.Integer(@number)
           else
-            Utils::Kernel.Float(rounded_number)
+            CygUtils::Kernel.Float(rounded_number)
           end
         end
 

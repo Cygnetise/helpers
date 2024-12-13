@@ -466,7 +466,7 @@ module FullStack
     private
 
     def _escape(string)
-      Hanami::Utils::Escape::SafeString.new(string)
+      Hanami::CygUtils::Escape::SafeString.new(string)
     end
   end
 

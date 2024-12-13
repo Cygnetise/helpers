@@ -1,4 +1,4 @@
-require 'hanami/utils/escape'
+require 'hanami/cyg_utils/escape'
 
 module Hanami
   module Helpers
@@ -39,7 +39,7 @@ module Hanami
           if @builder.nested?
             @builder.to_s
           else
-            Utils::Escape.html(result)
+            CygUtils::Escape.html(result)
           end
         end
       end

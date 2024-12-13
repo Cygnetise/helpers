@@ -1,4 +1,4 @@
-require 'hanami/utils/string'
+require 'hanami/cyg_utils/string'
 
 module Hanami
   module Helpers
@@ -43,7 +43,7 @@ module Hanami
       # @since 0.1.0
       # @api private
       def self.included(base)
-        factory = "#{Utils::String.namespace(base)}.routes"
+        factory = "#{CygUtils::String.namespace(base)}.routes"
 
         base.class_eval <<-END_EVAL, __FILE__, __LINE__ + 1
           def routes

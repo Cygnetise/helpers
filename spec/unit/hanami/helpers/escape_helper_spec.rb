@@ -47,7 +47,7 @@ RSpec.describe Hanami::Helpers::EscapeHelper do
   end
 
   it 'raw string is a Hanami::Helpers::Escape::SafeString class' do
-    expect(@view.raw_string.class).to eq(Hanami::Utils::Escape::SafeString)
+    expect(@view.raw_string.class).to eq(Hanami::CygUtils::Escape::SafeString)
   end
 
   it 'html helper alias' do

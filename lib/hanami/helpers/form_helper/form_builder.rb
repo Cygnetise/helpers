@@ -2,7 +2,7 @@ require 'hanami/helpers/form_helper/html_node'
 require 'hanami/helpers/form_helper/values'
 require 'hanami/helpers/html_helper/html_builder'
 require 'hanami/helpers/escape_helper'
-require 'hanami/utils/string'
+require 'hanami/cyg_utils/string'
 
 module Hanami
   module Helpers
@@ -125,7 +125,7 @@ module Hanami
 
         # Resolves all the nodes and generates the markup
         #
-        # @return [Hanami::Utils::Escape::SafeString] the output
+        # @return [Hanami::CygUtils::Escape::SafeString] the output
         #
         # @since 0.2.0
         # @api private
@@ -382,10 +382,10 @@ module Hanami
         def label(content = nil, **attributes, &blk)
           attributes = { for: _for(content, attributes.delete(:for)) }.merge(attributes)
           content    = case content
-                       when String, Hanami::Utils::String, NilClass
+                       when String, Hanami::CygUtils::String, NilClass
                          content
                        else
-                         Utils::String.capitalize(content)
+                         CygUtils::String.capitalize(content)
                        end
 
           super(content, attributes, &blk)
@@ -1621,7 +1621,7 @@ module Hanami
         # @since 0.2.0
         def _input_id(name)
           name = _input_name(name).gsub(/\[(?<token>[[[:word:]]\-]*)\]/, INPUT_ID_REPLACEMENT)
-          Utils::String.dasherize(name)
+          CygUtils::String.dasherize(name)
         end
 
         # Input <tt>value</tt> HTML attribute
@@ -1640,7 +1640,7 @@ module Hanami
         # @since 0.2.0
         def _for(content, name)
           case name
-          when String, Hanami::Utils::String
+          when String, Hanami::CygUtils::String
             name
           else
             _input_id(name || content)

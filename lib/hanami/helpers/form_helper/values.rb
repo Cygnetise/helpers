@@ -1,4 +1,4 @@
-require 'hanami/utils/hash'
+require 'hanami/cyg_utils/hash'
 
 module Hanami
   module Helpers
@@ -18,7 +18,7 @@ module Hanami
         # @since 0.2.0
         # @api private
         def initialize(values, params)
-          @values = Utils::Hash.symbolize(values || {})
+          @values = CygUtils::Hash.symbolize(values || {})
           @params = params
         end
 
@@ -59,7 +59,7 @@ module Hanami
         # @api private
         def _dig(base, key)
           case base
-          when Utils::Hash, ::Hash        then base[key]
+          when CygUtils::Hash, ::Hash        then base[key]
           when Array                      then base[key.to_s.to_i]
           when ->(r) { r.respond_to?(key) } then base.public_send(key)
           end
